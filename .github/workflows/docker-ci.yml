@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build . -t $DOCKER_USERNAME/$IMAGE_NAME:latest
+          docker buildx build . -t $DOCKER_USERNAME/$IMAGE_NAME:latest --load
 
       - name: Push Docker image
         run: |
